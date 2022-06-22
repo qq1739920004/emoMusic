@@ -1,0 +1,38 @@
+/* components/music-list-item/index.wxss */
+.icon-right{
+  width: 40rpx;
+  height: 40rpx;
+}
+.music-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-bottom: 12rpx;
+  background-color: #fdfbfb8f;
+}
+.itemImg{
+  width: 110rpx;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.068);
+}
+.content{
+  width: calc(100% - 130rpx);
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left:135rpx ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20rpx;
+  padding-bottom: 25rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.048);
+}
+.name{
+  font-size: 32rpx;
+}
+.author{
+  font-size: 24rpx;
+  color:rgb(173, 171, 169)
+}

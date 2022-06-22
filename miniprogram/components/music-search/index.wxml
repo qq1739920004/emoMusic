@@ -1,0 +1,11 @@
+<!--components/searchMusic/index.wxml-->
+<!-- 搜索框 -->
+<van-search class="musicSearch"
+  shape="round"
+  disabled="{{disabled}}"
+  background="#fafafa"
+  value="{{ serchValue }}"
+  focus
+  bind:change="serchValueChange"
+  placeholder="请输入搜索关键词" 
+   />

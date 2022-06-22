@@ -1,0 +1,9 @@
+/* components/kl-swiper/index.wxss */
+.swiper{
+  border-radius: 3px;
+  transform: translateY(0);
+  overflow: hidden;
+}
+.item-image{
+  width: 100%;
+}

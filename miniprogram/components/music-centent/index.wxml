@@ -1,0 +1,27 @@
+<!--components/music-centent/index.wxml-->
+<wxs src='../../utils/videoPurify.wxs' module="timeSizePurify"></wxs>
+<view class="content">
+    <image class="img" src="{{musicInfo.songs[0].al.picUrl?musicInfo.songs[0].al.picUrl:'../../assets/player/play_pause.png' }}" mode="aspectFit"></image>
+    <view class="musicInfo">
+      <text class="name" wx:if="{{musicInfo.songs[0]}}">{{musicInfo.songs[0].name}}</text>
+      <view class="author-art">
+        <text class="author" wx:if="{{musicInfo.songs[0]}}">{{musicInfo.songs[0].ar[0].name}}</text>
+        <text class="art" wx:if="{{musicInfo.songs[0].al.name}}">专辑：{{musicInfo.songs[0].al.name}}</text>
+      </view>
+    </view>
+    <view class="lyric" wx:if="{{isShowLyric}}">{{presentLyric}}</view>
+    <view class="slider">
+      <slider bindchange="sliderChange" bindchanging="sliderChanging" value="{{presentStep}}" left-icon="cancel" block-size="12" right-icon="success_no_circle"/>
+      <view class="sliderTime">
+        <text>{{timeSizePurify.timeSizePurify(presentTime)}}</text>
+        <text>{{timeSizePurify.timeSizePurify(musicInfo.songs[0].dt)}}</text>
+      </view>
+    </view>
+    <view class="but-all">
+      <image class="but-img" bindtap="methodChange" src="/assets/player/{{butPlayMethodImg}}.png" mode="widthFix"></image>
+      <image class="but-img" bindtap="prevMusic" src="/assets/player/play_prev.png" mode="widthFix"></image>
+      <image class="but-img" bindtap="startStopChange" src="/assets/player/{{butStartImg}}.png" class="start" mode="widthFix"></image>
+      <image class="but-img" bindtap="nextMusuc" src="/assets/player/play_next.png" mode="widthFix"></image>
+      <image class="but-img" src="/assets/player/play_music.png" mode="widthFix"></image>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<!--components/hot-search/index.wxml-->
+<view class="hot">
+  <text class="title">热门搜索</text>
+  <view class="text">
+    <text class="hotKeyword" bindtap="getHotFirst" data-first="{{item.first}}" wx:for="{{hotSearchList}}" wx:key="first">{{item.first}}
+    </text>
+  </view>
+
+</view>
+

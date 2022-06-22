@@ -1,0 +1,19 @@
+<!--components/menu-list/index.wxml-->
+<!-- 歌曲列表 -->
+<view class="list">
+  <block  wx:for="{{list}}" wx:key="index">
+    <view class="item" bindtap="skipDetaled" data-id="{{item.id}}"  data-index="{{item.index}}">
+      <text class="index">{{index+1}}</text>
+      <view class="content">
+        <text class="musicName">{{item.name}}</text>
+        <view class="placeholder">
+        <image src="../../assets/image/sq_icon.png" class="musicLogo" mode="widthFix"></image>
+        <text class="musicAuthor">{{item.ar[0].name}}</text>
+        <text class="musicAuthor" wx:if="{{item.alia[0]}}">·</text>
+        <text class="musicAuthor" wx:if="{{item.alia[0]}}">{{item.alia[0]}}</text>
+      </view>
+      </view>
+    </view>
+  </block>
+</view>
+

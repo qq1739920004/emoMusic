@@ -1,0 +1,22 @@
+/* components/hot-search/index.wxss */
+.hot{
+  padding: 0 20rpx;
+}
+.title{
+  font-size: 36rpx;
+  font-weight: 600;
+  display: block;
+  margin:40rpx 0;
+}
+.hotKeyword{
+  display: inline-block;
+  margin-right: 40rpx;
+  margin-bottom: 20rpx;
+  background-color: #e4dfdf;
+  border-radius: 10px;
+  font-size: 28rpx;
+  padding: 4px 10px;
+}
+.text{
+  padding-left: 10rpx;
+}

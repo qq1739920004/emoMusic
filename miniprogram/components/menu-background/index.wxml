@@ -1,0 +1,25 @@
+<!--components/menu-background/index.wxml-->
+<wxs src="../../utils/videoPurify.wxs" module="videoPurify"></wxs>
+<!-- 背景 -->
+<view class="baground" style="background-image: url('{{listDetail.coverImgUrl}}');background-size: cover;background-position: center center;">
+  <view class="bagroundContent">
+    <image class="bagroundImg" src="{{listDetail.coverImgUrl}}" mode="widthFix"></image>
+    <view class="backgroundText">
+      <text class="backgroundTitle">{{listDetail.name}}</text>
+      <image class="userIcon" mode="widthFix" src="{{listDetail.creator.avatarUrl}}"></image>
+      <text class="nickname">{{listDetail.creator.nickname}}</text>
+      <text class="signature">简介：{{listDetail.creator.signature}}</text>
+    </view>
+  </view>
+    <!-- 收藏，分享图标 -->
+    <view class="userHanld">
+      <view class="userLike">
+        <image class="userLikeImg" src="../../assets/image/favor_icon.png" mode="widthFix"></image>
+        <text class="userLikeText">{{videoPurify.lookNumberPurify(listDetail.playCount)}}</text>
+      </view>
+      <view class="share">
+        <image class="shareImg" src="../../assets/image/share_icon.png" mode="widthFix"></image>
+        <text class="shareText">分享</text>
+      </view>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="header">
+  <view class="title">{{title}}</view>
+  <view class="right" wx:if="{{showText}}">
+    <view class="slot">
+      <slot></slot>
+    </view>
+    <view class="rightText" bindtap="skipSongList">
+      <text>{{text}}</text>
+      <image class="icon"  src="/assets/image/arrow-right.png"></image>
+    </view>
+  </view>
+</view>

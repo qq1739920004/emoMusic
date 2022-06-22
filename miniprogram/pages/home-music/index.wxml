@@ -1,0 +1,27 @@
+<!--pages/home-music/index.wxml-->
+<!-- 加载动画 -->
+<van-loading wx:if="{{isLoading}}" color="#1989fa" custom-class="vLoading" size="24px" vertical ></van-loading>
+<wxs src="../../utils/listSlice.wxs" module="listSlice"></wxs>
+
+<view class="home-music" wx:if="{{!isLoading}}">
+<!-- 搜索框 -->
+<view  bindtap="hanldSearch">
+<music-search disabled="{{true}}"></music-search>
+</view>
+<!-- 轮播图 -->
+<kl-swiper class="swiper" model:is-loading="{{isLoading}}"  banners="{{banners}}"></kl-swiper>
+<!-- 推荐歌曲 -->
+<music-bread title='推荐歌曲' bind:skipSongList="skipSongList"></music-bread>
+<music-list  musicList="{{listSlice.listSlice(musicList,0,7)}}"></music-list>
+<!-- 热门歌单 -->
+<music-bread  title='热门歌单' ></music-bread>
+<song-menu songMenu="{{songMenu}}" bind:skipSongList="skipSongList"></song-menu>
+<!-- 精选歌单 -->
+<music-bread  title='精选歌单'></music-bread>
+<song-menu songMenu="{{songMenu2}}" bind:skipSongList="skipSongList"></song-menu>
+<!-- 巅峰榜单 -->
+<text class="rankingTitle">巅峰榜</text>
+<ranking-item wx:for="{{rankingTop3}}" bind:skipSongList="skipSongList" rankingTop3="{{item}}" wx:key="id"></ranking-item>
+<!-- 音乐组件 -->
+<music-component></music-component>
+</view>

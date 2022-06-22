@@ -1,0 +1,10 @@
+/* pages/detail-video/index.wxss */
+page{
+  padding-top: 225px;
+}
+.Lvideo{
+  width: 100%;
+  height: 225px;
+  position: fixed;
+  top: 0;
+}

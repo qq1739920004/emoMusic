@@ -1,0 +1,10 @@
+
+/* 切割数组
+ musicList:被切割的数组
+ startNum：开始位置
+ endNum：结束位置
+ */
+function listSlice(musicList,startNum,endNum){
+  return musicList.slice(startNum,endNum)
+}
+module.exports={listSlice:listSlice}

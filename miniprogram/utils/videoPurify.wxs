@@ -1,0 +1,30 @@
+//视频播放量的过滤美化
+function lookNumberPurify(number) {
+  var number=parseInt(number)
+  if (number >= 100000000) {
+    return (number / 100000000).toFixed(1) + '亿'
+  } else if (number > 10000) {
+    return (number / 10000).toFixed(1) + '万'
+  }
+  else {
+    return number + ''
+  }
+} 
+//视频时长的过滤美化
+function timeSizePurify(time){
+  var timeSecond=time/1000
+  var timeMinute=Math.floor(timeSecond/60)
+  var timeRusidue=Math.floor(timeSecond%60)
+
+  // console.log(str.slice(timeMinute.length));
+  return complateTime(timeMinute)+':'+complateTime(timeRusidue)
+}
+//两位数自动补全0
+function complateTime(time){
+  time=time+''
+  return ('00'+time).slice(time.length)
+}
+module.exports={
+  lookNumberPurify:lookNumberPurify,
+  timeSizePurify:timeSizePurify
+}

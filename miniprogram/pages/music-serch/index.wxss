@@ -1,0 +1,7 @@
+/* pages/music-serch/index.wxss */
+.van-search__content {
+  background-color: #f3f0f0 !important;
+}
+.van-search{
+  padding: 10px 0 !important;
+}

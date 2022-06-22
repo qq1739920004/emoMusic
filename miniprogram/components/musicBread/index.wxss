@@ -1,0 +1,33 @@
+/* components/musicBread/index.wxss */
+.right{
+  display: flex;
+  justify-content: center;
+}
+
+.title{
+  font-weight: 600;
+  font-size: 36rpx;
+}
+.rightText,.slot{
+  color: #777;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rightText{
+  display: none;
+}
+.slot:empty + .rightText{
+  display: flex;
+}
+.icon{
+  width: 45rpx;
+  height: 45rpx;
+}
+.header{
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  height: 88rpx;
+}

@@ -1,0 +1,17 @@
+/* pages/song-list/index.wxss */
+
+.title{
+  display: block;
+  font-weight: 700;
+  font-size: 40rpx;
+  padding-left: 10rpx;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+.vLoading{
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  left: 50%;
+  transform: translate(-50%);
+}

@@ -1,0 +1,13 @@
+<!--components/song-menu/index.wxml-->
+<wxs src='../../utils/videoPurify.wxs' module="purify"></wxs>
+<scroll-view scroll-x class="itemMenu">
+  <block wx:for="{{songMenu}}" wx:key="coverImgId">
+    <view class="item" bindtap="skipSongList" data-id="{{item.id}}">
+      <view class="itemImg">
+        <image class="img" src="{{item.coverImgUrl}}"></image>
+        <text class="imgText">{{purify.lookNumberPurify(item.playCount)}}</text>
+      </view>
+      <text class="font">{{item.name}}</text>
+    </view>
+    </block>
+</scroll-view>

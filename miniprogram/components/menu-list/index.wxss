@@ -1,0 +1,36 @@
+/* components/menu-list/index.wxss */
+.musicName{
+  display: block;
+  font-size: 28rpx;
+}
+.musicAuthor{
+  font-size: 22rpx;
+  color: #969494;
+  font-weight: 400;
+}
+.index{
+  width: 70rpx;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #585858;
+}
+.item{
+  display: flex;
+  padding: 15rpx 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.034);
+}
+.content{
+  width: calc(100% - 70rpx);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.musicLogo{
+  width: 34rpx;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}

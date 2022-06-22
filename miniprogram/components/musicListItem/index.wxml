@@ -1,0 +1,11 @@
+<!--components/music-list-item/index.wxml-->
+<view class="music-item"  data-id="item.id">
+  <image class="itemImg" src="{{item.al.picUrl}}" mode="widthFix"></image>
+  <view class="content">
+    <view class="name">{{item.name}}</view>
+    <view class="author">{{item.ar[0].name}}</view>  
+  </view>
+  <view class="img-right">
+    <image class="icon-right" src="../../assets/image/arrow-right.png"></image>
+  </view>
+</view>

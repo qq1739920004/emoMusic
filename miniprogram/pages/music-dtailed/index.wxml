@@ -1,0 +1,34 @@
+<!--pages/music-dtailed/index.wxml-->
+  <!-- 加载动画 -->
+  <van-loading wx:if="{{isLoading}}" color="#1989fa" custom-class="vLoading" size="24px" vertical ></van-loading>
+<view class="music-dtailed" wx:if="{{!isLoading}}">
+<!-- 背景 -->
+<image class="back-img" src="{{musicInfo.songs[0].al.picUrl}}" style="top: {{statusBarHeight}};" alt=""/>
+<view class="back" style="height:{{screenHeight-statusBarHeight}}px;" style="top: {{statusBarHeight}};">
+  <view class="box">
+
+  <!-- 头部 -->
+    <music-header statusBarHeight="{{statusBarHeight}}" screenHeight="{{screenHeight}}">
+      <view class="cent">
+        <view class="{{selectColor?'select':''}} item1">歌曲</view>
+        <view class="item-or">|</view>
+        <view class="{{!selectColor?'select':''}} item2 ">歌词</view>
+      </view>
+    </music-header>
+    
+    <!-- 内容 -->
+    <swiper scroll-x style="height:{{screenHeight-statusBarHeight-44}}px;" bindchange="swiperChange">
+    <!-- 歌曲页 -->
+    <swiper-item class="content">
+      <music-centent model:is-loading="{{isLoading}}" isShowLyric="{{isShowLyric}}" statusBarHeight="{{statusBarHeight}}" musicId="{{id}}" screenHeight="{{screenHeight}}"></music-centent>
+    </swiper-item>
+    <!-- 歌词页 -->
+    <swiper-item class="lyric">
+     <music-lyric screenHeight="{{screenHeight}}" statusBarHeight="{{statusBarHeight}}"></music-lyric>
+    </swiper-item>
+    </swiper>
+    
+    
+  </view>
+</view>
+</view>

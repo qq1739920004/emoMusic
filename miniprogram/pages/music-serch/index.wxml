@@ -1,0 +1,7 @@
+<!--pages/music-serch/index.wxml-->
+<music-search  model:serch-value="{{serchValue}}" bind:musicListNull="musicListNull"></music-search>
+<hot-search bind:serchStart="serchStart" wx:if="{{!serchValue}}" hotSearchList="{{hotSearchList}}" model:serch-value="{{serchValue}}"></hot-search>
+<search-list  bind:serchStart="serchStart" wx:if="{{serchValue && !musicList.length}}" model:serch-value="{{serchValue}}" ></search-list>
+<menu-list wx:if="{{musicList.length && serchValue!==''}}" list="{{musicList}}"></menu-list>
+
+

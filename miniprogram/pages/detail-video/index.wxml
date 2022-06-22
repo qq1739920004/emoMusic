@@ -1,0 +1,8 @@
+<!--pages/detail-video/index.wxml-->
+<video class="Lvideo" 
+       src="{{MVAddress.url}}"
+       autoplay
+       loop
+       referrer-policy="origin"
+       >
+</video>

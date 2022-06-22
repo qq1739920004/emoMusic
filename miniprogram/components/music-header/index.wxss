@@ -1,0 +1,28 @@
+/* components/music-header/index.wxss */
+.left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right{
+  width: 60rpx;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftImg{
+  transform: rotate(180deg);
+  width: 60rpx;
+}
+.header{
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+}
+.cent{
+  flex: 1;
+  line-height: 44px;
+}

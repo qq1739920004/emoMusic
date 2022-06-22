@@ -1,0 +1,33 @@
+/* pages/home-music/index.wxss */
+.van-search__content {
+  background-color: #f3f0f0 !important;
+}
+.van-search{
+  padding: 10px 0 !important;
+}
+page{
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+
+.swiper{
+  width: 100%;
+  border-radius: 3px;
+  transform: translateY(0);
+  overflow: hidden;
+}
+
+.vLoading{
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  left: 50%;
+  transform: translate(-50%);
+}
+.rankingTitle{
+  display: inline-block;
+  font-weight: 600;
+  font-size: 36rpx;
+  margin-top: 10rpx;
+  margin-bottom: 15rpx;
+}

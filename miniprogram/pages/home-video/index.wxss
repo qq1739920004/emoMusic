@@ -1,0 +1,17 @@
+.video {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.item{
+  width: 45%;
+}
+
+.vLoading{
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  left: 50%;
+  transform: translate(-50%);
+}

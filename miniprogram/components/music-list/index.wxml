@@ -1,0 +1,6 @@
+<!--components/music-list/index.wxml-->
+<block wx:for="{{musicList}}" wx:key="id">
+  <view class="musicList">
+    <music-list-item item="{{item}}" bindtap="skipMusicDtaile" data-id="{{item.id}}" data-index="{{index}}"></music-list-item>
+  </view>
+</block>

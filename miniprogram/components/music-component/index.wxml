@@ -1,0 +1,11 @@
+<!--components/music-component/index.wxml-->
+<view class="ms-component" wx:if="{{musicInfo.songs[0]}}">
+  <view class="musicInfo">
+    <image class="img" style="animation-play-state:{{butStart?'running':'paused'}}" src="{{musicInfo.songs[0].al.picUrl}}" mode="widthFix"></image>
+    <text class="name">{{musicInfo.songs[0].name}}</text>
+  </view>
+  <view class="but">
+    <image class="butImg1"  src="../../assets/player/{{butStart?'pause_icon':'play_icon'}}.png" bindtap="startStopChange" mode="widthFix"></image>
+    <image class="butImg2" src="../../assets/player/playlist_icon.png" mode="widthFix"></image>
+  </view>
+</view>

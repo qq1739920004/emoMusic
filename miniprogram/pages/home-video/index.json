@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+
+  "usingComponents": {
+    "video-item-v1":"../../components/video-item-v1/index",
+    "van-loading": "@vant/weapp/loading/index"
+  }
+}

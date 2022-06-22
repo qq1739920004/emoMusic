@@ -1,0 +1,9 @@
+<!--components/kl-swiper/index.wxml-->
+<swiper class="swiper" indicator-dots autoplay interval="1000" style="height:{{bannersHeight}}px;">
+  <block wx:for="{{banners}}" wx:key="bannerId">
+    <swiper-item class="swiperItem">
+      <image class='item-image' bindload="handleImageWidth" src="{{item.pic}}" mode="widthFix">
+      </image>
+    </swiper-item>
+  </block>
+</swiper>

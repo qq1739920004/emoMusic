@@ -1,0 +1,7 @@
+<view class="video">
+<!-- 加载动画 -->
+  <van-loading wx:if="{{isLoading}}" color="#1989fa" custom-class="vLoading" size="24px" vertical ></van-loading>
+  <view class="item" wx:for="{{videoTitle}}" wx:key="id">
+   <video-item-v1 data-item="{{item}}" bindtap="routerChange"  item="{{item}}"></video-item-v1>
+  </view>
+</view>

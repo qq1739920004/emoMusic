@@ -1,0 +1,76 @@
+/* components/menu-background/index.wxss */
+.bagroundImg{
+  width: 215rpx;
+  margin-right: 40rpx;
+  border-radius: 10px;
+}
+.bagroundContent{
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding-top: 80rpx;
+  box-sizing: border-box;
+  box-shadow: 0 1px 10px rgba(87, 86, 86, 0.459);
+}
+.backgroundText{
+  width: 400rpx;
+}
+.baground{
+  width: 100%;
+  height: 450rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.backgroundTitle{
+  display: block;
+  word-break: break-all;
+}
+.signature{
+  display: block;
+}
+
+.userIcon{
+  width: 50rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 16rpx;
+  margin-top:20rpx ;
+  margin-bottom:20rpx  ;
+}
+.backgroundTitle{
+  display: block;
+  font-size: 34rpx;
+}
+.signature{
+  text-overflow: ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  -webkit-line-clamp: 2;
+  display: -moz-box;
+  word-wrap: break-word;
+  font-size: 26rpx;
+}
+.nickname{
+  font-size: 26rpx;
+}
+.userHanld{
+  width: 60%;
+  display: flex;
+  position: absolute;
+  bottom:40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-between;
+  color: white;
+  font-size: 26rpx;
+  vertical-align: middle;
+}
+.userLikeImg,.shareImg{
+  width: 50rpx;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 6rpx;
+}

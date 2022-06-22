@@ -1,0 +1,10 @@
+<!--components/search-list/index.wxml-->
+<view class="search-list">
+  <view class="searchValue">搜索"{{serchValue}}"</view>
+  <block wx:for="{{sliceText}}" wx:key="item">
+  <view class="item"  bindtap="serchValueChange" data-index="{{index}}">
+    <image class="img" mode="widthFix" src="../../assets/image/search_icon.png"></image>
+    <rich-text nodes="{{item}}"></rich-text>
+  </view>
+</block>
+</view>

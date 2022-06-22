@@ -1,0 +1,6 @@
+<!--components/music-lyric/index.wxml-->
+<scroll-view scroll-with-animation scroll-top="{{scrollTopSize}}"  show-scrollbar="{{false}}" class="lyric" scroll-y>
+  <block wx:for="{{musicLyric}}" wx:key="index" >
+    <view class="{{presentLyricIndex==index?'active-item':''}} item"  style="padding-top: {{index===0?((screenHeight-statusBarHeight)/4):0}}px; padding-bottom:{{index===(musicLyric.length-1)?((screenHeight-statusBarHeight))/2:0}}px;">{{item.value}}</view>
+  </block>
+</scroll-view>

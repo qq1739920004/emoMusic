@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "music-bread":"../../components/musicBread/index",
+    "music-search":"../../components/music-search/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "kl-swiper":"../../components/kl-swiper/index",
+    "music-list":"../../components/music-list/index",
+    "song-menu":"../../components/song-menu/index",
+    "ranking-item":"../../components/ranking-item/index",
+    "song-list":"../song-list/index",
+    "music-component":"../../components/music-component"
+  }
+}

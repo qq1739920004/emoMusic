@@ -1,0 +1,14 @@
+/* pages/login/index.wxss */
+.login{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginBox{
+  display: flex;
+  flex-direction: column;
+}
+
+
+

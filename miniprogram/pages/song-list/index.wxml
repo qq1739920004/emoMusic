@@ -1,0 +1,14 @@
+<!--pages/song-list/index.wxml-->
+<!-- 加载动画 -->
+<van-loading wx:if="{{isLoading}}" color="#1989fa" custom-class="vLoading" size="24px" vertical ></van-loading>
+<view class="song-list" wx:if="{{!isLoading}}">
+<!--标题或者背景 -->
+<!-- 标题 -->
+<text class="title" wx:if="{{type==='musicList'}}">推荐歌曲</text>
+<block wx:if="{{listDetail}} ? {{list}}">
+<!-- 背景 -->
+<menu-background   listDetail="{{listDetail}}"></menu-background>
+<!-- 歌曲列表 -->
+<menu-list list="{{list}}"></menu-list>
+</block>
+</view>

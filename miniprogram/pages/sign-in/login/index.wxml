@@ -1,0 +1,11 @@
+<!--pages/login/index.wxml-->
+<view class="login" >
+  <van-notify id="van-notify" />
+  <view class="loginBox">
+    <van-button type="primary" custom-style="width:300rpx;margin-bottom:10px" round class="register" bind:click="onClickShowLogin">登录</van-button>
+    <van-button type="info" custom-style="width:300rpx" round class="register" bind:click="onClickShowRegister">注册</van-button>
+  </view>
+</view>
+<!-- 遮罩层显示的内容 -->
+<kl-overlay title="注册" model:show="{{showRegister}}"></kl-overlay>
+<kl-overlay title="登录" bind:enterMusicHome="enterHome" model:show="{{showLogin}}"></kl-overlay>

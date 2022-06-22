@@ -1,0 +1,12 @@
+<wxs src="../../utils/videoPurify.wxs" module="videoPurify"></wxs>
+
+<view class="item">
+      <view class="imageBox">
+        <image src="{{item.cover}}" mode="widthFix" class="image"/>
+          <view class="info">
+            <view class="lookNumber">{{videoPurify.lookNumberPurify(item.playCount)}}</view>
+            <view class="timeSize">{{videoPurify.timeSizePurify(item.mv.videos[0].duration)}}</view>
+          </view>
+      </view>
+      <view class="textTitle">{{item.name}}-{{item.artistName}}</view>
+    </view>

@@ -1,0 +1,65 @@
+/* components/music-centent/index.wxss */
+.content{
+  height:100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:0 10px 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.img{
+  width: 100%;
+  flex: 5;
+}
+.name{
+  font-size: 44rpx;  
+  color: white;
+  font-weight: 600;
+  word-break: break-all;
+  margin-bottom: 10rpx;
+}
+.musicInfo{
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.author-art{
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  color: rgb(189, 189, 189);
+}
+.but-all{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.but-img {
+  width: 40px;
+}
+
+.but-all .start{
+  width: 60px;
+}
+.lyric{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.sliderTime{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  position: relative;
+  left: 50%;
+  bottom: 20rpx;
+  color: white;
+  transform: translate(-50%);
+}

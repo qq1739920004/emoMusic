@@ -1,0 +1,19 @@
+<!--components/ranking-item/index.wxml-->
+<wxs src="../../utils/videoPurify.wxs" module="lookNumberPurify"></wxs>
+<view class="item" bindtap="skipSongList" data-id="{{rankingTop3.id}}">
+  <view class="content">
+    <text class="rankingTitle">{{rankingTop3.name}}</text>
+    <ol class="musicList">
+      <li class="musicListLi" wx:for="{{rankingTop3.tracks}}" wx:for-item="musicItem" wx:key="id">
+      <text class="musicName">{{index+1}}. </text>
+       <text class="musicName">{{musicItem.first}}</text>
+       <text class="musicAuthor"> – {{musicItem.second}}</text> 
+      </li>
+    </ol>
+  </view>
+  <view class="imgContent">
+    <image class="img" src="{{rankingTop3.coverImgUrl}}" mode="widthFix"></image>
+    <text class="count">{{lookNumberPurify.lookNumberPurify(rankingTop3.playCount)}}</text>
+  </view>
+
+</view>

@@ -1,0 +1,72 @@
+<!--components/vantOverlay/index.wxml-->
+<van-overlay show="{{ show }}">
+  <van-notify id="van-notify"/>
+  <view class="wrapper">
+    <form class="registerForm">
+    <image class="close" src="../../assets/image/close.png" bindtap="isShow"></image>
+      <view class="formBox">
+        <text class="formTitle">{{title}}</text>
+        <view class="inputPhoen">
+          <van-field model:value="{{ phone }}"
+            title-width="48px"
+            left-icon='{{phoneIcon}}'
+            focus
+            label="手机号:"
+            required
+            placeholder="请输入手机号"
+            placeholder-style="font-size:12px"
+            bind:blur="focusHidden"
+            input-class='van-field'
+            error-message="{{phoneError}}" border="{{ false }}" />
+        </view>
+        <van-loading wx:if="{{isLoading}}" color="#1989fa" custom-class="vLoading" size="24px" vertical ></van-loading>
+
+        <!-- 验证码登录 -->
+        <view wx:if="{{!loginMethod}}" class="verify">
+          <van-field
+            left-icon='{{verifyIcon}}'
+            style="width: 220px; text-align: right;"
+            title-width="46px"
+            model:value="{{ sms }}"
+            placeholder-style="font-size:12px"
+            required
+            label="验证码:"
+            placeholder="请输入验证码"
+            border="{{ false }}"
+            use-button-slot
+            input-class='van-field'
+            >    
+          </van-field>
+          <van-button slot="button" bind:click="getVerify" size="small" type="primary" disabled='{{!verifyImport}}' custom-style="width:160rpx;font-size:24rpx;  border-radius: 3px;">
+                {{verifyText}}
+            </van-button>  
+        </view>
+        <!-- 密码登录 -->
+        <view wx:if="{{loginMethod}}" class="password">
+        <van-field
+            style="width: 220px; text-align: right;"
+            title-width="66px"
+            password
+            model:value="{{ password }}"
+            placeholder-style="font-size:12px"
+            required
+            label="密码:"
+            placeholder="请输入密码"
+            border="{{ false }}"
+            use-button-slot
+            input-class='van-field'
+            >    
+          </van-field>
+      </view>
+        <text class="loginChange" wx:if="{{title=='登录'}}" bindtap="loginChange">{{changeText}}</text>
+        <view class="loginBut">
+          <van-button slot="button" custom-style="width:160rpx;border-radius: 8px; font-size:30rpx" size="small" type="info" bind:click="signIn">
+          {{title}}
+          </van-button>
+        </view>
+      </view>
+      
+      
+    </form>
+  </view>
+</van-overlay>

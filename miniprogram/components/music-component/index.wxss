@@ -1,0 +1,45 @@
+/* components/music-component/index.wxss */
+.ms-component{
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.411);
+  display: flex;
+  justify-content: space-between;
+  padding:0 10px;
+  box-sizing: border-box;
+  align-items: center;
+}
+.musicInfo{
+  display: flex;
+  align-items: center;
+}
+.img{
+  width: 80rpx;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  border: 1px solid rgba(59, 59, 59, 0.171);
+  top: -12px;
+  animation: roter 10s linear infinite;
+}
+.name{
+  font-size: 28rpx;
+}
+.butImg1,.butImg2{
+  width: 50rpx;
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
+}
+@keyframes roter{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
