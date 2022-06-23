@@ -27,6 +27,7 @@ const musicDetailStore = new HYEventStore({
     presentStep:0,
     presentLyric:'',
     presentLyricIndex:0,
+    isNext:true,
     //控制歌曲的按钮
     butStart:true,
     butStartImg:'play_pause',
@@ -37,7 +38,11 @@ const musicDetailStore = new HYEventStore({
   
   actions:{
     getMusicInfo(ctx:any,musicid:any){
-      if (musicid===ctx.id) {
+      console.log(ctx.isNext);
+      
+      if (musicid===ctx.id && !ctx.isNext) {
+        console.log(222);
+        
         musicDetailStore.dispatch('butHandle')
         return
       }
@@ -90,6 +95,7 @@ const musicDetailStore = new HYEventStore({
     },
    timeUpdate(ctx:any){
     audio.onTimeUpdate(()=>{
+      ctx.isNext=false
       let time=audio.currentTime*1000
       ctx.presentTime=time
       musicDetailStore.dispatch('lyricSet')
@@ -145,6 +151,8 @@ const musicDetailStore = new HYEventStore({
   prevMusic(ctx:any){
     //列表循环
     if (ctx.butPlayMethod===0) {
+      ctx.isNext=false
+
       if (ctx.musicListIndex==0) {
         ctx.musicListIndex=ctx.musicList.length
       }
@@ -154,10 +162,14 @@ const musicDetailStore = new HYEventStore({
     }
     //单曲循环
     else if (ctx.butPlayMethod===1) {
+      ctx.isNext=true
+
       musicDetailStore.dispatch("getMusicInfo",ctx.musicList[ctx.musicListIndex].id)
     }
     //随机循环
     else{
+      ctx.isNext=false
+
       const random=Math.floor(Math.random()*ctx.musicList.length)
       musicDetailStore.dispatch("getMusicInfo",ctx.musicList[random].id)
     }
@@ -167,6 +179,8 @@ const musicDetailStore = new HYEventStore({
   //下一首
   nextMusuc(ctx:any){
     if (ctx.butPlayMethod===0) {
+      ctx.isNext=false
+
       if (ctx.musicListIndex==ctx.musicList.length-1) {
         ctx.musicListIndex=-1
       }
@@ -175,10 +189,12 @@ const musicDetailStore = new HYEventStore({
     }
     //单曲循环
     else if (ctx.butPlayMethod===1) {
+      ctx.isNext=true
       musicDetailStore.dispatch("getMusicInfo",ctx.musicList[ctx.musicListIndex].id)
     }
     //随机循环
     else{
+      ctx.isNext=false
       const random=Math.floor(Math.random()*ctx.musicList.length)
       musicDetailStore.dispatch("getMusicInfo",ctx.musicList[random].id)
     }

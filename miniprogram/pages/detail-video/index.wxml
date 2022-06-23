@@ -1,4 +1,5 @@
 <!--pages/detail-video/index.wxml-->
+<wxs src='../../utils/videoPurify.wxs'  module="videoPurify"></wxs>
 <video class="Lvideo" 
        src="{{MVAddress.url}}"
        autoplay
@@ -6,3 +7,10 @@
        referrer-policy="origin"
        >
 </video>
+<view class="info">
+<text class="title">{{mvInfop.name}}</text>
+<text class="author">{{mvInfop.artistName}} -</text>
+<text class="number">{{videoPurify.lookNumberPurify(mvInfop.playCount)}}次播放 - </text> <text class="datetime">{{mvInfop.publishTime}}</text>
+<recommend-video MVRelation="{{MVRelation}}"></recommend-video>
+</view>
+

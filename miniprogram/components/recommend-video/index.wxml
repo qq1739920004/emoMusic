@@ -1,0 +1,14 @@
+<!--components/recommend/index.wxml-->
+<wxs src='../../utils/videoPurify.wxs'  module="videoPurify"></wxs>
+
+<text class="title">推荐视频</text>
+<view wx:for="{{MVRelation}}" class="item" wx:key="vid">
+  <view class="imgBox">
+    <image class="img" src="{{item.coverUrl}}" mode="heightFix"></image>
+    <view class="lookNumber">{{videoPurify.lookNumberPurify(item.playTime)}}</view>
+  </view>
+  <view class="videoInfo">
+    <text class="name">{{item.title}}</text>
+    <text class="author">{{item.creator[0].userName}}</text>
+  </view>
+</view>

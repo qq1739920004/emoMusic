@@ -1,4 +1,6 @@
 // components/menu-list/index.ts
+import {musicDetailStore} from '../../store/musicDetaile'
+
 Component({
   /**
    * 组件的属性列表
@@ -21,6 +23,8 @@ Component({
    */
   methods: {
     skipDetaled(e:any){
+      musicDetailStore.setState('musicList',this.data.list)
+      musicDetailStore.setState('musicListIndex',e.currentTarget.dataset.index)
       wx.navigateTo({
         url:`../../pages/music-dtailed/index?id=${e.currentTarget.dataset.id}`     
        })
