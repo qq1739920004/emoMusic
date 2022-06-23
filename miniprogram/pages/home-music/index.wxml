@@ -23,5 +23,5 @@
 <text class="rankingTitle">巅峰榜</text>
 <ranking-item wx:for="{{rankingTop3}}" bind:skipSongList="skipSongList" rankingTop3="{{item}}" wx:key="id"></ranking-item>
 <!-- 音乐组件 -->
-<music-component></music-component>
+<music-component catchtap="skipMusic"></music-component>
 </view>

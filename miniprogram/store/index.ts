@@ -1,4 +1,4 @@
 import {musicStore} from './homeMusic'
-import {musicDetailStore} from './musicDetaile'
+import {musicDetailStore,audio} from './musicDetaile'
 
-export {musicStore,musicDetailStore}
+export {musicStore,musicDetailStore,audio}

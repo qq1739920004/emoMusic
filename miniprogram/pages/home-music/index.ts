@@ -1,6 +1,6 @@
 // pages/home-music/index.ts
 import {swiperService,hotSongMenu,handpickMenu,rankingMenu} from '../../service/musicService'
-import {musicStore} from '../../store/index'
+import {musicStore,musicDetailStore} from '../../store/index'
 Page({
 
   /**
@@ -18,7 +18,17 @@ Page({
     rankingTop3:[] as any[],
   },
 
-  
+  //跳转到音乐播放页
+  skipMusic(){
+    let id
+    musicDetailStore.onState('id',(res:any)=>{
+      id=res
+    })
+    
+    wx.navigateTo({
+      url:`../music-dtailed/index?id=${id}`
+    })
+  },
   //跳转到音乐列表
   skipSongList(title:any){
     if(title.detail==='推荐歌曲'){

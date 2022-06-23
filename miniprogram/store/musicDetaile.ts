@@ -1,7 +1,14 @@
 const { HYEventStore } = require("hy-event-store")
 import {musicService,musicLyric} from '../service/musicDtailedService'
 import {lyricHandle} from '../utils/lyricHandle'
-import {audio} from '../global-attribute/idnex'
+
+const audio=wx.getBackgroundAudioManager()
+audio.onEnded(()=>{
+  musicDetailStore.dispatch('nextMusuc')
+})
+audio.onError(()=>{
+  musicDetailStore.dispatch('nextMusuc')
+})
 
 const musicDetailStore = new HYEventStore({
   state:{
@@ -34,7 +41,6 @@ const musicDetailStore = new HYEventStore({
         musicDetailStore.dispatch('butHandle')
         return
       }
-
       //初始化属性防止换歌还有上一首的画面残余
       ctx.musicInfo={}
       ctx.musicLyric={}
@@ -47,7 +53,9 @@ const musicDetailStore = new HYEventStore({
       musicService(musicid).then(res=>{
         ctx.musicInfo=res
         ctx.id=musicid
-        musicDetailStore.dispatch('musicBus')
+        audio.title=ctx.id
+        audio.title=res.songs[0].name
+        audio.src=`https://music.163.com/song/media/outer/url?id=${ctx.id}`
         })
         // 歌词信息
         musicLyric(musicid).then(res=>{
@@ -57,28 +65,27 @@ const musicDetailStore = new HYEventStore({
           ctx.musicLyric=lyric
           ctx.presentLyric=ctx.musicLyric[0].value
         }
-
-
         })     
-    },
-    // 音乐播放环境
-    musicBus(ctx:any){
       //音乐播放环境
       audio.stop()
-    
-      audio.src=`https://music.163.com/song/media/outer/url?id=${ctx.id}`
+      audio.onPause(()=>{
+        ctx.butStart=false
+        musicDetailStore.dispatch('butHandle')
+      })
+      audio.onPlay(()=>{
+        ctx.butStart=true
+        musicDetailStore.dispatch('butHandle')
+      })
       // 开始播放
-      audio.autoplay=true
       audio.onCanplay(()=>{
+        audio.play()
         if (ctx.butStart===true) {
-          audio.play()
           musicDetailStore.dispatch('timeUpdate')
         }
         else{
           ctx.butStart=true
           musicDetailStore.dispatch('butHandle')
         }
-      
       })
     },
    timeUpdate(ctx:any){
@@ -147,7 +154,7 @@ const musicDetailStore = new HYEventStore({
     }
     //单曲循环
     else if (ctx.butPlayMethod===1) {
-      
+      musicDetailStore.dispatch("getMusicInfo",ctx.musicList[ctx.musicListIndex].id)
     }
     //随机循环
     else{
@@ -168,7 +175,7 @@ const musicDetailStore = new HYEventStore({
     }
     //单曲循环
     else if (ctx.butPlayMethod===1) {
-      
+      musicDetailStore.dispatch("getMusicInfo",ctx.musicList[ctx.musicListIndex].id)
     }
     //随机循环
     else{
@@ -179,5 +186,5 @@ const musicDetailStore = new HYEventStore({
 }
 })
 
-export {musicDetailStore}
+export {musicDetailStore,audio}
 

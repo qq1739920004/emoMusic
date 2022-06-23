@@ -1,6 +1,5 @@
 // components/music-centent/index.ts
-import {audio} from '../../global-attribute/idnex'
-import {musicDetailStore} from '../../store/index'
+import {musicDetailStore,audio} from '../../store/index'
 Component({
   /**
    * 组件的属性列表
@@ -31,7 +30,7 @@ Component({
     musicInfo:{} as any,
     musicLyric:[] as any[],
 
-    presentTime:'0' as any,
+    presentTime:0 as any,
     presentStep:0,
     presentLyric:'',
     isStep:true,//拖动进度条的时候让进度条缓动取消
@@ -98,14 +97,12 @@ Component({
     audioContext(){
       //准备好音乐源的hook
       musicDetailStore.onStates(['presentTime','presentStep','presentLyric'],(res:any)=>{
-        if(res.presentTime)                     this.setData({presentTime:res.presentTime})
+        if(res.presentTime && this.data.isStep) this.setData({presentTime:res.presentTime})
         if(res.presentStep && this.data.isStep) this.setData({presentStep:res.presentStep})
         //当前歌词赋值
         if(res.presentLyric)                    this.setData({presentLyric:res.presentLyric})
       })
   },
-  
-  
   // 点击度条促发
   sliderChange(e:any){
     let time=e.detail.value
@@ -113,7 +110,6 @@ Component({
     this.setData({presentTime:time*this.data.musicInfo.songs[0].dt/100})
     audio.pause()
     audio.seek(this.data.presentTime/1000)
-    musicDetailStore.dispatch('timeUpdate')
   },
   // 拖动进度条促发
   sliderChanging(e:any){

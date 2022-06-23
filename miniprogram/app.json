@@ -8,6 +8,7 @@
     "pages/song-list/index",
     "pages/music-dtailed/index"
   ],
+  "requiredBackgroundModes": ["audio"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fafafa",
