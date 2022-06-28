@@ -26,24 +26,24 @@ Page({
     })
     
     wx.navigateTo({
-      url:`../music-dtailed/index?id=${id}`
+      url:`/packageMusicDetaild/pages/music-dtailed/index?id=${id}`
     })
   },
   //跳转到音乐列表
   skipSongList(title:any){
     if(title.detail==='推荐歌曲'){
       wx.navigateTo({
-        url:`../song-list/index?type=${'musicList'}`
+        url:`/packageSearch/pages/song-list/index?type=${'musicList'}`
       })
     }
     else if(title.detail==='热门歌单' || title.detail==='精选歌单'){
       wx.navigateTo({
-        url:`../song-list/index?type=${'menu'}`
+        url:`/packageSearch/pages/song-list/index?type=${'menu'}`
       })
     } 
     else if(title.detail==='巅峰榜'){
       wx.navigateTo({
-        url:`../song-list/index?type=${'rankingList'}`
+        url:`/packageSearch/pages/song-list/index?type=${'rankingList'}`
       })
     }
   }, 
@@ -86,7 +86,7 @@ Page({
   //跳转到搜索界面
   hanldSearch() {
     wx.navigateTo({
-      url:"../music-serch/index"
+      url:"../../packageSearch/pages/music-serch/index"
     })
   },
   /**

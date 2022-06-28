@@ -20,7 +20,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    videoChange(e:any){
+      const id=e.currentTarget.dataset.id
+      wx.navigateTo({
+        url:`../../pages/detail-video/index?id=${id}`
+      })
+    }
   },
   created(){
   

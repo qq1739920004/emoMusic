@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "van-search": "@vant/weapp/search/index",
-    "music-search":"../../components/music-search/index",
-    "hot-search":"../../components/hot-search",
-    "search-list":"../../components/search-list",
-    "menu-list":"../../components/menu-list"
-  }
-}

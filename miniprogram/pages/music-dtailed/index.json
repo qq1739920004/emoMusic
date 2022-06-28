@@ -1,9 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "music-header":"../../components/music-header",
-    "music-centent":"../../components/music-centent",
-    "music-lyric":"../../components/music-lyric",
-    "van-loading": "@vant/weapp/loading/index"
-  }
-}

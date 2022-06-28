@@ -2,7 +2,7 @@
 <wxs src='../../utils/videoPurify.wxs'  module="videoPurify"></wxs>
 
 <text class="title">推荐视频</text>
-<view wx:for="{{MVRelation}}" class="item" wx:key="vid">
+<view wx:for="{{MVRelation}}" bindtap="videoChange" data-id="{{item.vid}}" class="item" wx:key="vid">
   <view class="imgBox">
     <image class="img" src="{{item.coverUrl}}" mode="heightFix"></image>
     <view class="lookNumber">{{videoPurify.lookNumberPurify(item.playTime)}}</view>

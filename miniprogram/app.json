@@ -3,12 +3,28 @@
     "pages/home-music/index",
     "pages/home-video/index",
     "pages/detail-video/index",
-    "pages/music-serch/index",
-    "pages/sign-in/login/index",
-    "pages/song-list/index",
-    "pages/music-dtailed/index"
+    "pages/my-Info/index",
+    "pages/sign-in/login/index"
+
   ],
-  "requiredBackgroundModes": ["audio"],
+  "subpackages": [
+    {
+      "root": "packageMusicDetaild",
+      "pages": [
+        "pages/music-dtailed/index"
+      ]
+    },
+    {
+      "root": "packageSearch",
+      "pages": [
+        "pages/music-serch/index",
+        "pages/song-list/index"
+      ]
+    }
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fafafa",

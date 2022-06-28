@@ -26,7 +26,7 @@ Component({
       musicDetailStore.setState('musicList',this.data.list)
       musicDetailStore.setState('musicListIndex',e.currentTarget.dataset.index)
       wx.navigateTo({
-        url:`../../pages/music-dtailed/index?id=${e.currentTarget.dataset.id}`     
+        url:`/packageMusicDetaild/pages/music-dtailed/index?id=${e.currentTarget.dataset.id}`     
        })
     }
   }
